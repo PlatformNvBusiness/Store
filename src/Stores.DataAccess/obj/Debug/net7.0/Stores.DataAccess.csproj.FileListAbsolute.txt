@@ -1,0 +1,24 @@
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\bin\Debug\net7.0\Stores.DataAccess.deps.json
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\bin\Debug\net7.0\Stores.DataAccess.dll
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\bin\Debug\net7.0\Stores.DataAccess.pdb
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.csproj.AssemblyReference.cache
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.AssemblyInfoInputs.cache
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.AssemblyInfo.cs
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.csproj.CoreCompileInputs.cache
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.dll
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\refint\Stores.DataAccess.dll
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.pdb
+D:\Project Admin Nathan\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\ref\Stores.DataAccess.dll
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\bin\Debug\net7.0\Stores.DataAccess.deps.json
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\bin\Debug\net7.0\Stores.DataAccess.dll
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\bin\Debug\net7.0\Stores.DataAccess.pdb
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.csproj.AssemblyReference.cache
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.AssemblyInfoInputs.cache
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.AssemblyInfo.cs
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.dll
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\refint\Stores.DataAccess.dll
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\Stores.DataAccess.pdb
+C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\obj\Debug\net7.0\ref\Stores.DataAccess.dll
