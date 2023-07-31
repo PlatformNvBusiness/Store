@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>38d72ea6-c8ca-4dea-8a78-f94214609416</UserSecretsId>
+	 
+  </PropertyGroup>
+
+  <ItemGroup>
+   
+	  <PackageReference Include="Azure.Storage.Blobs" Version="12.13.1" />
+   
+	  <PackageReference Include="Azure.Storage.Files.Shares" Version="12.1.0" />
+   
+	  <PackageReference Include="Azure.Storage.Queues" Version="12.11.1" />
+   
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Microsoft.Extensions.Azure" Version="1.5.0" />
+	  <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.15" />
+	  <PackageReference Include="Serilog" Version="3.0.1" />
+	  <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+	  <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+	  <PackageReference Include="Serilog.Settings.Configuration" Version="7.0.0" />
+	  <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+	  <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="9.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+	 
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Stores.BusinessLogic\Stores.BusinessLogic.csproj" />
+    <ProjectReference Include="..\Stores.DataAccess\Stores.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>
