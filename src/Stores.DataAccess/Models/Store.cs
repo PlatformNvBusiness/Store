@@ -64,7 +64,7 @@ public class Store
     /// <summary>
     /// The date of the last update of the store
     /// </summary>
-    public DateTime UpdateDate { get; set; }
+    public DateTimeOffset UpdateDate { get; set; }
 
     /// <summary>
     /// The navigation property for the items
