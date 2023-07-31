@@ -73,6 +73,10 @@ namespace Stores.DataAccess.Repositories
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Function dispose to dispose the object unit of work
+        /// </summary>
+        /// <param name="disposing">To see if the object can be disposed</param>
         public void Dispose(bool disposing)
         {
             if(disposing)

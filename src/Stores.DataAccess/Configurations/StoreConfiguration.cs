@@ -5,8 +5,16 @@ using Stores.DataAccess.Models;
 
 namespace Stores.DataAccess.Configurations;
 
+/// <summary>
+/// The configuration for the store entity
+/// </summary>
 public class StoreConfiguration : IEntityTypeConfiguration<Store>
 {
+
+    /// <summary>
+    /// Configuring the store entity 
+    /// </summary>
+    /// <param name="builder">The entity type builder </param>
     public void Configure(EntityTypeBuilder<Store> builder)
     {
         builder.HasKey(x => x.Id);
@@ -19,10 +27,17 @@ public class StoreConfiguration : IEntityTypeConfiguration<Store>
             .IsRequired(false);
         builder.Property(x => x.Country)
             .IsRequired();
+        builder.Property(x => x.AddressLine1)
+            .IsRequired();
+        builder.Property(x => x.AddreesLine2)
+            .IsRequired(false);
       
         builder.Property(x => x.CreationDate)
             .ValueGeneratedOnAdd()
             .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
+        builder.Property(x => x.UpdateDate)
+            .ValueGeneratedOnUpdate()
+            .Metadata.SetAfterSaveBehavior (PropertySaveBehavior.Save);
 
         builder.HasMany(store => store.WorkingHours)
             .WithOne(workingHour => workingHour.Store);
@@ -36,6 +51,5 @@ public class StoreConfiguration : IEntityTypeConfiguration<Store>
             .WithOne(faq => faq.Store);
 
         builder.ToTable("Stores");
-
     }
 }

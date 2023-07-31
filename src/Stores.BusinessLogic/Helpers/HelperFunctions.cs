@@ -1,6 +1,10 @@
 ﻿using Stores.BusinessLogic.Exceptions;
 
 namespace Stores.BusinessLogic.Helpers;
+
+/// <summary>
+/// The function to help the business logic
+/// </summary>
 public static class HelperFunctions
 {
     /// <summary>
@@ -12,7 +16,7 @@ public static class HelperFunctions
     /// <param name="cancellation">The cancellation token</param>
     /// <returns>A <see cref="Task{T}"/></returns>
     /// <exception cref="NotFoundException">Whenthe item can not be found int the database</exception>
-    public static async Task<T> GetOneAsync<T>(Func<int, CancellationToken, Task<T>> getByIdAsync, int id, CancellationToken cancellation)
+    public static async Task<T> GetOneAsync<T>(Func<int, CancellationToken, ValueTask<T>> getByIdAsync, int id, CancellationToken cancellation)
     {
         var item = await getByIdAsync(id, cancellation);
 

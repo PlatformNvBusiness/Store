@@ -1,52 +1,57 @@
-﻿using Serilog;
-using Serilog.Sinks.Elasticsearch;
+﻿using EntityFramework.Exceptions.PostgreSQL;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Azure;
 using Stores.BusinessLogic.Services;
 using Stores.DataAccess.Extensions;
 using Stores.Presentation.Profiles;
 
-namespace Stores.Presentation.Extensions
+namespace Stores.Presentation.Extensions;
+
+/// <summary>
+/// The configuration of the services of the application
+/// </summary>
+public static partial class ApplicationDependenciesConfiguration
 {
-    public static partial class ApplicationDependenciesConfiguration
+
+    /// <summary>
+    /// Configure the services of the application
+    /// </summary>
+    /// <param name="application"></param>
+    /// <returns></returns>
+    public static IServiceCollection ConfigureServices(this WebApplicationBuilder builder)
     {
-        public static IServiceCollection ConfigureServices(this WebApplicationBuilder application)
-        {
-            application.Services
-                .AddDatabase(application.Configuration)
-                .AddRepositories()
-                .AddAutoMapper(typeof(StoreProfile))
-                .AddScoped<IStoreService, StoreService>()
-                .AddScoped<IItemService, ItemService>()
-                .AddScoped<ICategoryService, CategoryService>()
-                .AddScoped<ICategoryTypeService, CategoryTypeService>();
-
-            return application.Services;
-        }
-
-        /// </summary>
-        /// <param name="builder">The builder</param>
-        /// <returns>A <see cref="WebApplication"/></returns>
-        public static WebApplicationBuilder AddLogger(this WebApplicationBuilder builder)
-        {
-            var config = builder.Configuration;
-
-            builder.Host.UseSerilog((context, configuration) =>
+        builder.Services
+            .AddDatabase(options =>
             {
-                configuration.Enrich.FromLogContext()
-                 .Enrich.WithMachineName()
-                 .WriteTo.Console()
-                 .ReadFrom.Configuration(config);
+                options.UseExceptionProcessor();
+                options.UseNpgsql(builder.Configuration.GetConnectionString("StoreService"));
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            })
+            .AddRepositories()
+            .AddAutoMapper(typeof(StoreProfile))
+            .AddScoped<IStoreService, StoreService>()
+            .AddScoped<IItemService, ItemService>()
+            .AddScoped<ICategoryService, CategoryService>()
+            .AddScoped<ICategoryTypeService, CategoryTypeService>()
+            .AddAzureBlobService(builder.Configuration);
 
-                configuration.WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(config["ElasticConfiguration:Uri"]))
-                {
-                    IndexFormat = $"{context.Configuration["ApplicationName"]} -logs-{context.HostingEnvironment.EnvironmentName?.ToLower().Replace(".", "-")}-{DateTime.UtcNow:yyyy-MM}",
-                    AutoRegisterTemplate = true,
-                    NumberOfShards = 2,
-                    NumberOfReplicas = 1
-                })
-                   .Enrich.WithProperty("Environment", context.HostingEnvironment.EnvironmentName);
-            });
+        return builder.Services;
+    }
 
-            return builder;
-        }
+    /// <summary>
+    /// Configuring the azure blob service
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configuration"></param>
+    /// <returns></returns>
+    public static IServiceCollection AddAzureBlobService(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddAzureClients(clientBuilder =>
+        {
+            clientBuilder.AddBlobServiceClient(configuration["StorageConnectionString:blob"], preferMsi: true);
+            clientBuilder.AddQueueServiceClient(configuration["StorageConnectionString:queue"], preferMsi: true);
+        });
+
+        return services;
     }
 }

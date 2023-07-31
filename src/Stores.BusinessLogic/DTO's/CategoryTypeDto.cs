@@ -1,8 +1,18 @@
-﻿namespace Stores.BusinessLogic.DTO_s
+﻿namespace Stores.BusinessLogic.DTO_s;
+
+/// <summary>
+/// The category type data transfert object
+/// </summary>
+public class CategoryTypeDto
 {
-    public class CategoryTypeDto
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
+
+    /// <summary>
+    /// The id
+    /// </summary>
+    public int Id { get; set; }
+
+    /// <summary>
+    /// The name of the category type
+    /// </summary>
+    public string Name { get; set; }
 }

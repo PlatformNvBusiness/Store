@@ -1,9 +1,23 @@
-﻿namespace Stores.BusinessLogic.Requests
+﻿namespace Stores.BusinessLogic.Requests;
+
+/// <summary>
+/// The category request
+/// </summary>
+public class CategoryRequest
 {
-    public class CategoryRequest
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int CategoryTypeId { get; set; }
-    }
+
+    /// <summary>
+    /// The name of the category
+    /// </summary>
+    public string Name { get; set; }
+
+    /// <summary>
+    /// The description
+    /// </summary>
+    public string Description { get; set; }
+
+    /// <summary>
+    /// The catetory type id
+    /// </summary>
+    public int CategoryTypeId { get; set; }
 }

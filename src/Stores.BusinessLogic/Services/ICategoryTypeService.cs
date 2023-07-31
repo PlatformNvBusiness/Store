@@ -1,14 +1,53 @@
 ﻿using Stores.BusinessLogic.DTO_s;
 using Stores.BusinessLogic.Requests;
 
-namespace Stores.BusinessLogic.Services
+namespace Stores.BusinessLogic.Services;
+
+/// <summary>
+/// The category type service
+/// </summary>
+public interface ICategoryTypeService
 {
-    public interface ICategoryTypeService
-    {
-        Task<CategoryTypeDto> AddAsync(CategoryTypeRequest categoryDto, CancellationToken cancellation);
-        Task<CategoryTypeDto> UpdateAsync(int id, CategoryTypeRequest categoryDto, CancellationToken cancellation);
-        Task<string> DeleteAsync(int id, CancellationToken cancellation);
-        Task<List<CategoryTypeDto>> GetCategoriesTypeAsync(CancellationToken cancellation);
-        Task<CategoryTypeDto> GetByIdAsync(int id, CancellationToken cancellation);
-    }
+
+    /// <summary>
+    /// Add a new category type
+    /// </summary>
+    /// <param name="categoryDto"></param>
+    /// <param name="cancellation"></param>
+    /// <returns></returns>
+    Task<CategoryTypeDto> AddAsync(CategoryTypeRequest categoryDto, CancellationToken cancellation);
+
+    /// <summary>
+    /// Update a category type
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="categoryDto"></param>
+    /// <param name="cancellation"></param>
+    /// <returns></returns>
+    Task<CategoryTypeDto> UpdateAsync(int id, CategoryTypeRequest categoryDto, CancellationToken cancellation);
+
+    /// <summary>
+    /// Delete a category type
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="cancellation"></param>
+    /// <returns></returns>
+    Task<string> DeleteAsync(int id, CancellationToken cancellation);
+
+    /// <summary>
+    /// Get categories type by page
+    /// </summary>
+    /// <param name="page"></param>
+    /// <param name="size"></param>
+    /// <param name="cancellation"></param>
+    /// <returns></returns>
+    Task<List<CategoryTypeDto>> GetCategoriesTypeAsync(int page, int size, CancellationToken cancellation);
+
+    /// <summary>
+    /// Get the category type by his id
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="cancellation"></param>
+    /// <returns></returns>
+    Task<CategoryTypeDto> GetByIdAsync(int id, CancellationToken cancellation);
 }

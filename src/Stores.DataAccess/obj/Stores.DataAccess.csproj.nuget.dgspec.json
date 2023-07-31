@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\Platform-N-VBuisness\\Backend\\Microservices\\Stores\\src\\Stores.DataAccess\\Stores.DataAccess.csproj": {}
+    "C:\\Users\\User\\Documents\\projects-nv-nathan\\Store\\src\\Stores.DataAccess\\Stores.DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\Platform-N-VBuisness\\Backend\\Microservices\\Stores\\src\\Stores.DataAccess\\Stores.DataAccess.csproj": {
+    "C:\\Users\\User\\Documents\\projects-nv-nathan\\Store\\src\\Stores.DataAccess\\Stores.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\Platform-N-VBuisness\\Backend\\Microservices\\Stores\\src\\Stores.DataAccess\\Stores.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\projects-nv-nathan\\Store\\src\\Stores.DataAccess\\Stores.DataAccess.csproj",
         "projectName": "Stores.DataAccess",
-        "projectPath": "C:\\Users\\User\\Documents\\Platform-N-VBuisness\\Backend\\Microservices\\Stores\\src\\Stores.DataAccess\\Stores.DataAccess.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\projects-nv-nathan\\Store\\src\\Stores.DataAccess\\Stores.DataAccess.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\Platform-N-VBuisness\\Backend\\Microservices\\Stores\\src\\Stores.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\projects-nv-nathan\\Store\\src\\Stores.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

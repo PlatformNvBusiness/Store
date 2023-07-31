@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Stores.DataAccess
-build_property.ProjectDir = C:\Users\User\Documents\Platform-N-VBuisness\Backend\Microservices\Stores\src\Stores.DataAccess\
+build_property.ProjectDir = C:\Users\User\Documents\projects-nv-nathan\Store\src\Stores.DataAccess\
