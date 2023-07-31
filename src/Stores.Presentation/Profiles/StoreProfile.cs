@@ -23,13 +23,14 @@ public class StoreProfile : Profile
             .ReverseMap();
         CreateMap<StoreDto, StoreRequest>()
             .ReverseMap();
-
         CreateMap<PageResult<Store>, PageResult<StoreDto>>()
             .ReverseMap();
 
         CreateMap<Item, ItemDto>()
             .ReverseMap();
         CreateMap<ItemDto, ItemRequest>()
+            .ReverseMap();
+        CreateMap<Item, ItemRequest>()
             .ReverseMap();
         CreateMap<PageResult<Item>, PageResult<ItemDto>>()
            .ReverseMap();
