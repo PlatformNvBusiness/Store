@@ -2,6 +2,7 @@
 using Stores.BusinessLogic.DTO_s;
 using Stores.BusinessLogic.Requests;
 using Stores.DataAccess.Models;
+using Stores.DataAccess.Helpers;
 
 namespace Stores.Presentation.Profiles;
 
@@ -23,16 +24,25 @@ public class StoreProfile : Profile
         CreateMap<StoreDto, StoreRequest>()
             .ReverseMap();
 
+        CreateMap<PageResult<Store>, PageResult<StoreDto>>()
+            .ReverseMap();
+
         CreateMap<Item, ItemDto>()
             .ReverseMap();
         CreateMap<ItemDto, ItemRequest>()
             .ReverseMap();
+        CreateMap<PageResult<Item>, PageResult<ItemDto>>()
+           .ReverseMap();
+
         CreateMap<Category, CategoryDto>()
             .ReverseMap();
         CreateMap<CategoryDto, CategoryRequest>()
             .ReverseMap();
         CreateMap<Category, CategoryRequest>()
             .ReverseMap();
+        CreateMap<PageResult<Category>, PageResult<CategoryDto>>()
+           .ReverseMap();
+
 
         CreateMap<CategoryType, CategoryTypeDto>()
             .ReverseMap();
@@ -40,5 +50,7 @@ public class StoreProfile : Profile
             .ReverseMap();
         CreateMap<CategoryTypeDto, CategoryTypeRequest>()
             .ReverseMap();
+        CreateMap<PageResult<CategoryType>, PageResult<CategoryTypeDto>>()
+           .ReverseMap();
     }
 }
