@@ -22,11 +22,6 @@ public class ItemRequest
     public decimal Price { get; set; }
 
     /// <summary>
-    /// The store id
-    /// </summary>
-    public int StoreId { get; set; }
-
-    /// <summary>
     /// The category id
     /// </summary>
     public int CategoryId { get; set; }

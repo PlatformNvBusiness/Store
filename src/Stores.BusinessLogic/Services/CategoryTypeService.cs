@@ -82,6 +82,13 @@ public class CategoryTypeService : ICategoryTypeService
         return _mapper.Map<PageResult<CategoryTypeDto>>(await _unitOfWork.CategoryTypes.GetByPageAsync(page, size, cancellation));
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="categoryDto"></param>
+    /// <param name="cancellation"></param>
+    /// <returns></returns>
     public async Task<CategoryTypeDto> UpdateAsync(int id, CategoryTypeRequest categoryDto, CancellationToken cancellation)
     {
         var categoryTypeLooked = await HelperFunctions.GetOneAsync(_unitOfWork.CategoryTypes.GetByIdAsync, id, cancellation);
