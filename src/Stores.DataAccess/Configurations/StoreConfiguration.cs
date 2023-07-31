@@ -27,9 +27,9 @@ public class StoreConfiguration : IEntityTypeConfiguration<Store>
             .IsRequired(false);
         builder.Property(x => x.Country)
             .IsRequired();
-        builder.Property(x => x.AddressLine1)
+        builder.Property(x => x.AddressLineFirst)
             .IsRequired();
-        builder.Property(x => x.AddreesLine2)
+        builder.Property(x => x.AddreesLineSecond)
             .IsRequired(false);
       
         builder.Property(x => x.CreationDate)

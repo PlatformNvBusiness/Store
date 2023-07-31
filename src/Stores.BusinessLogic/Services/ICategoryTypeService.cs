@@ -1,5 +1,6 @@
 ﻿using Stores.BusinessLogic.DTO_s;
 using Stores.BusinessLogic.Requests;
+using Stores.DataAccess.Helpers;
 
 namespace Stores.BusinessLogic.Services;
 
@@ -41,7 +42,7 @@ public interface ICategoryTypeService
     /// <param name="size"></param>
     /// <param name="cancellation"></param>
     /// <returns></returns>
-    Task<List<CategoryTypeDto>> GetCategoriesTypeAsync(int page, int size, CancellationToken cancellation);
+    Task<PageResult<CategoryTypeDto>> GetCategoriesTypeAsync(int page, int size, CancellationToken cancellation);
 
     /// <summary>
     /// Get the category type by his id

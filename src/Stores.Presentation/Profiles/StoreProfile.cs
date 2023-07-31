@@ -37,7 +37,7 @@ public class StoreProfile : Profile
         CreateMap<CategoryType, CategoryTypeDto>()
             .ReverseMap();
         CreateMap<CategoryType, CategoryTypeRequest>()
-            .ReverseMap()
+            .ReverseMap();
         CreateMap<CategoryTypeDto, CategoryTypeRequest>()
             .ReverseMap();
     }

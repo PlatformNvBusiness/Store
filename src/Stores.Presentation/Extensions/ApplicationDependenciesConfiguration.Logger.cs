@@ -8,6 +8,7 @@ namespace Stores.Presentation.Extensions;
 /// </summary>
 public static partial class ApplicationDependenciesConfiguration
 {
+
     /// </summary>
     /// <param name="builder">The builder</param>
     /// <returns>A <see cref="WebApplication"/></returns>
