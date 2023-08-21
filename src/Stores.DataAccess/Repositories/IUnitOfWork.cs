@@ -28,6 +28,18 @@
         public ICategoryTypeRepository CategoryTypes { get; set; }
 
         /// <summary>
+        /// The item variations
+        /// </summary>
+        public IItemVariationRepository ItemVariations { get; set; }
+
+        /// <summary>
+        /// The repository for frequently asked questions
+        /// </summary>
+        public IFaqRepository Faqs { get; set; }
+
+        public IPolicyRepository Policies { get; set; }
+
+        /// <summary>
         /// The commit changes function to commit all the changes to the database
         /// </summary>
         /// <param name="cancellation">The cancellation</param>

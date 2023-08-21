@@ -29,6 +29,18 @@ namespace Stores.DataAccess.Repositories
         /// The category types repository
         /// </summary>
         public ICategoryTypeRepository CategoryTypes { get; set; }
+        
+        /// <summary>
+        /// The item variation repository
+        /// </summary>
+        public IItemVariationRepository ItemVariations { get; set; }
+
+        /// <summary>
+        /// The faq repository
+        /// </summary>
+        public IFaqRepository Faqs { get; set; }
+
+        public IPolicyRepository Policies { get; set; }
 
         /// <summary>
         /// Initializes a new instance of <see cref="UnitOfWork"/>
@@ -38,11 +50,17 @@ namespace Stores.DataAccess.Repositories
         /// <param name="items">The item repository</param>
         /// <param name="stores">The store repostitory</param>
         /// <param name="categories">The category repository</param>
-        public UnitOfWork(ILogger<UnitOfWork> logger, StoreContext storeContext,
-            IItemRepository items,
+        /// <param name="categoryTypes">The category type repository</parma>
+        /// <param name="itemVariations">The item variation repository</param>
+        /// <param name="faqs">The faq repository</param>
+        /// <param name="policies">The policy repository</param>
+        public UnitOfWork(ILogger<UnitOfWork> logger, StoreContext storeContext, IItemRepository items,
             IStoreRepository stores,
             ICategoryRepository categories,
-            ICategoryTypeRepository categoryTypes)
+            ICategoryTypeRepository categoryTypes,
+            IItemVariationRepository itemVariations,
+            IFaqRepository faqs,
+            IPolicyRepository policies)
         {
             _logger = logger;
             _storeContext = storeContext;
@@ -50,6 +68,9 @@ namespace Stores.DataAccess.Repositories
             Stores = stores;
             Categories = categories;
             CategoryTypes = categoryTypes;
+            ItemVariations = itemVariations;
+            Faqs = faqs;
+            Policies = policies;
         }
 
         /// <summary>

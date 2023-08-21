@@ -1,4 +1,7 @@
-﻿using EntityFramework.Exceptions.PostgreSQL;
+﻿using App.Metrics;
+using App.Metrics.Extensions.Configuration;
+using App.Metrics.Formatters.Prometheus;
+using EntityFramework.Exceptions.PostgreSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Azure;
 using Stores.BusinessLogic.Services;
@@ -33,7 +36,8 @@ public static partial class ApplicationDependenciesConfiguration
             .AddScoped<IItemService, ItemService>()
             .AddScoped<ICategoryService, CategoryService>()
             .AddScoped<ICategoryTypeService, CategoryTypeService>()
-            .AddAzureBlobService(builder.Configuration);
+            .AddAzureBlobService(builder.Configuration)
+            .AddMetricsPrometheus(builder.Configuration);
 
         return builder.Services;
     }
@@ -52,6 +56,24 @@ public static partial class ApplicationDependenciesConfiguration
             clientBuilder.AddQueueServiceClient(configuration["StorageConnectionString:queue"], preferMsi: true);
         });
 
+        return services;
+    }
+
+    public static IServiceCollection AddMetricsPrometheus(this IServiceCollection services, IConfiguration configuration)
+    {
+        var metrics = AppMetrics.CreateDefaultBuilder()
+            .OutputMetrics.AsPrometheusPlainText()
+            .OutputMetrics.AsPrometheusProtobuf()
+            .Configuration.ReadFrom(configuration)
+            .Build();
+
+        services.AddMetrics(metrics)
+            .AddMetricsTrackingMiddleware(configuration)
+            .AddMetricsEndpoints(configuration, option =>
+            {
+                option.MetricsTextEndpointOutputFormatter = Metrics.Instance.OutputMetricsFormatters.OfType<MetricsPrometheusTextOutputFormatter>().First();
+            });
+          
         return services;
     }
 }

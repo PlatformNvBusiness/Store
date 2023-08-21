@@ -345,7 +345,7 @@ namespace Stores.DataAccess.Migrations
                     b.Property<float?>("StoreRating")
                         .HasColumnType("real");
 
-                    b.Property<DateTime>("UpdateDate")
+                    b.Property<DateTimeOffset>("UpdateDate")
                         .ValueGeneratedOnUpdate()
                         .HasColumnType("timestamp with time zone");
 

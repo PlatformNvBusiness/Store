@@ -37,7 +37,7 @@ public class StoreConfiguration : IEntityTypeConfiguration<Store>
             .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
         builder.Property(x => x.UpdateDate)
             .ValueGeneratedOnUpdate()
-            .Metadata.SetAfterSaveBehavior (PropertySaveBehavior.Save);
+            .Metadata.SetBeforeSaveBehavior(PropertySaveBehavior.Save);
 
         builder.HasMany(store => store.WorkingHours)
             .WithOne(workingHour => workingHour.Store);

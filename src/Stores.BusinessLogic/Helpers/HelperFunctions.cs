@@ -19,10 +19,10 @@ public static class HelperFunctions
     public static async Task<T> GetOneAsync<T>(Func<int, CancellationToken, ValueTask<T>> getByIdAsync, int id, CancellationToken cancellation)
     {
         var item = await getByIdAsync(id, cancellation);
-
+        
         if (item is null)
         {
-            throw new NotFoundException($"the item was not found");
+            throw new NotFoundException($"the  {typeof(T).Name} with the id {id} was not found");
         }
 
         return item;

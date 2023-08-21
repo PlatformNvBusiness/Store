@@ -97,7 +97,9 @@ public class StoreService : IStoreService
     {
         var store = await HelperFunctions.GetOneAsync(_unitOfWork.Stores.GetByIdAsync, id, cancellation);
 
-        _unitOfWork.Stores.Delete(store);
+        _mapper.Map(storeRequest, store);
+
+        _unitOfWork.Stores.Update(store);
         await _unitOfWork.CommitChangesAsync(cancellation);
 
         return _mapper.Map<StoreDto>(store);

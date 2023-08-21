@@ -49,6 +49,10 @@ public static class ApplicationDependenciesConfiguration
                 .AddScoped<IItemRepository, ItemRepository>()
                 .AddScoped<ICategoryRepository, CategoryRepository>()
                 .AddScoped<ICategoryTypeRepository, CategoryTypeRepository>()
-                .AddScoped<IUnitOfWork, UnitOfWork>();
+                .AddScoped<IUnitOfWork, UnitOfWork>()
+                .AddScoped<IItemVariationRepository, ItemVariationRepository>()
+                .AddScoped<IFaqRepository, FaqRepository>()
+                .AddScoped<IPolicyRepository, PolicyRepository>();
+        
     }
 }
